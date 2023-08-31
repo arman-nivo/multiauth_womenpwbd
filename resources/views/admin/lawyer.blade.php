@@ -1,0 +1,75 @@
+<x-admin-layout>
+<style>
+        .widthinput{
+            width: 100%;
+        }
+        label{
+            display: block;
+            margin: 10px 0px;
+            font-weight: bold;
+        }
+        button{
+            margin: 20px 0px;
+            padding: 10px 24px;
+        }
+        .modifybutton{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+          
+
+           <div class="col-7">
+           <!-- @if (session('delete_notic'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                   <strong>{{session('delete_notic')}}</strong> 
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="padding: 0px 17px;position: absolute;top: -6px;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                @endif -->
+            <div style="color: black;background-color: #212529;margin: 9% 3%;padding: 7% 1%;border-radius: 12px;">
+
+            <h1 style="text-align: center;margin:0% 0% 3% 0%; color:white">Show all products</h1>
+            <table class="table table-dark table-hover" >
+            
+          <thead>
+              <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Teacher Name </th>
+              <th scope="col">Teacher price</th>
+              <th scope="col">Modify</th>
+              </tr>
+          </thead>
+          <tbody>
+              @foreach($all_lawyer as $all_lawyer)
+              <tr>
+              <th scope="row">{{$all_lawyer->id}}</th>
+              <td>{{$all_lawyer->name}}</td>
+              <td>{{$all_lawyer->email}}</td>
+              <td class="modifybutton">
+              
+              </td>
+              </tr>
+              
+              @endforeach
+
+          </tbody>
+
+      </table>
+
+            </div>
+        
+        </div>
+
+
+        </div>
+    </div>
+
+</x-admin-layout>
